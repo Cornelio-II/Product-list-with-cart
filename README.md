@@ -62,7 +62,7 @@ Thanks a lot to frontendmentor, I learned more how to design(Desktop, Tabletes, 
 
 - Frontend Mentor - [@Timex29](https://www.frontendmentor.io/profile/Timex29)
 - Twitter - [@LlagasCornelio](https://x.com/LlagasCornelio)
-- Gmail - [Cornelio Llagas](jun23.llagas@gmail.com)
+- Gmail - [Cornelio Llagas](https://mail.google.com/mail/u/1/#inbox)
 
 ## Acknowledgments
 
