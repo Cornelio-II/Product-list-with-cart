@@ -66,8 +66,7 @@ Thanks a lot to frontendmentor, I learned more how to design(Desktop, Tabletes, 
 - **Linkedin:** [Cornelio(Timex)LLagas](https://www.linkedin.com/in/cornelio-llagas-42529b186/)
 
 ## Acknowledgments
-
-I want to thank you all junior and senior developer who's first develop this challenge because of you guys, I know how to build my own,Who's happy to share their knowledge and strategy, Thank all.
+I would like to thank all the junior and senior developers who have helped me overcome this challenge. Now I know on how to build my own.
 
 **Have fun building!** 🚀
 
