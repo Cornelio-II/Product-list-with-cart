@@ -12,7 +12,7 @@ const { cartData, show, closeModal,resetQuantity } = defineProps({
         type: Array,
         default: () => []
     }, 
-    show: Boolean,
+    show: true,
     closeModal: Function,
     resetQuantity: Function
 })

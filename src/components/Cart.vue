@@ -15,6 +15,9 @@ const props = defineProps({
   showModal: Function,
 });
 
+// This code block is creating a computed property named `articles` that processes the `cartData` array
+// to group articles by their unique properties. It uses a `Map` to keep track of unique articles based
+// on a stringified version of each article object.
 const articles = computed(() => {
   const uniqueArticlesMap = new Map();
   props.cartData.forEach((article) => {
@@ -28,6 +31,11 @@ const articles = computed(() => {
   return Array.from(uniqueArticlesMap.values());
 });
 
+// The `numberOfArticles` constant is creating a computed property using Vue's `computed` function. It
+// calculates the number of articles in the `cartData` array by returning the length of the `cartData`
+// array passed as a prop to the component. This computed property will automatically update whenever
+// the `cartData` array changes, ensuring that the number of articles displayed in the cart is always
+// up to date.
 const numberOfArticles = computed(() => {
   return props.cartData.length;
 });
@@ -36,6 +44,11 @@ const isEmptyCart = computed(() => {
   return props.cartData.length === 0;
 });
 
+// The `const totalPrice` is a computed property that calculates the total price of all articles in the
+// cart. It uses the `articles` computed property, which is an array of unique articles with
+// quantities, to iterate over each article and calculate the total price by multiplying the quantity
+// of each article with its price and summing them up using the `reduce` method. This ensures that the
+// total price is dynamically updated whenever the cart data changes.
 const totalPrice = computed(() => {
   return articles.value.reduce((sum, article) => {
     return sum + article.quantity * article.price;
