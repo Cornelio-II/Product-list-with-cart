@@ -16,17 +16,17 @@
           media="(min-width: 480px)"/>
         <img :src="resolveUrl(product.image.mobile)" :alt="product.name"/>
       </picture>
-      <button
+      <button aria-label="add-to-cart-btn"
         v-if="!isSelected"
         class="product__header-btn"
         :onclick="handleClick">
         <img :src="cartIcon" alt="" />Add To Cart
       </button>
       <button v-else class="product__header-btn  orange">
-        <img :src="decrementIcon" :onclick="handleUpdate" class="img-icon"/>{{
+        <img alt="decrementIcon":src="decrementIcon" :onclick="handleUpdate" class="img-icon"/>{{
           checkQuantity(product)
         }}
-        <img :src="incrementIcon" :onclick="handleClick" class="img-icon"/>
+        <img alt="incrementIcon" :src="incrementIcon" :onclick="handleClick" class="img-icon"/>
       </button>
     </div>
     <div class="product__infos">

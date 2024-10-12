@@ -68,7 +68,7 @@ const handleConfirm = () => {
   <div class="cart">
     <h5 class="cart__title">Your Cart ({{ numberOfArticles }})</h5>
     <div v-if="isEmptyCart" class="cart-empty">
-      <img src="../assets/images/illustration-empty-cart.svg" alt="" />
+      <img alt="impty-icon" src="../assets/images/illustration-empty-cart.svg"/>
 
       <p>your added items will appear here.</p>
     </div>
@@ -85,8 +85,8 @@ const handleConfirm = () => {
               <span>${{ article.quantity * article.price }}</span>
             </p>
           </div>
-          <button class="cart-item__remove-btn" @click="handleRemove(article)">
-             <img :src="iconRemove" alt=""  style="height: fit-content;"/>
+          <button aria-label="removeBtn" class="cart-item__remove-btn" @click="handleRemove(article)">
+             <img alt="removeIcon" :src="iconRemove" style="height: fit-content;"/>
           </button>
         </div>
       </div>
@@ -103,7 +103,7 @@ const handleConfirm = () => {
         </div>
       </div>
 
-      <button class="order__delivery-confirmBtn"  @click="handleConfirm">Confirm Order
+      <button  class="order__delivery-confirmBtn"  @click="handleConfirm">Confirm Order
         
       </button>
     </div>
