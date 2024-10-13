@@ -18,6 +18,15 @@
     gap: 25px;
   }
 }
+.attribution {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 25px;
+}
+.attribution a {
+        color: hsl(243, 82%, 46%);
+}
+     
 
 
-
+   
