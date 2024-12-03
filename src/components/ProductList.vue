@@ -1,5 +1,5 @@
-<script setup>
-import Product from "./Product.vue";
+`<script setup>
+import Product from './Product.vue'
 
 const { addArticle, products, updateQuantity } = defineProps({
   products: Object,
@@ -10,83 +10,76 @@ const { addArticle, products, updateQuantity } = defineProps({
 </script>
 
 <template>
-  <div class="productList">
-    <div style="font-size: 25px; text-align: center;">
-      <h1>Desserts</h1>
-    </div>
-    <div class="products__container">
+  <div class="productlist">
+     <h1 class="main-title-sticky">Desserts</h1>
+    <div class="product_container">
       <div v-for="product in products" :key="product.id">
         <Product
           :product="product"
           :addArticle="addArticle"
           :updateQuantity="updateQuantity"
-          :checkQuantity="checkQuantity"/>
+          :checkQuantity="checkQuantity"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-h1 {
-  margin-bottom: 50px;
-  
+.main-title-sticky{
+ position:sticky;
+ top:0;
+ margin-top: -20px;
+ margin-bottom: 12px;
+ border: none;
+ text-align: center;
+ background-color: var(--rose-50);
+ box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+ padding: 10px 20px;
+ z-index: 1000;
+ align-items: center;
+ justify-content: center;
 }
- .products__container {
-    display: flex;
-    flex-direction: column;
-    grid-gap: 2em;
+.product_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
-/* */
-
-/* tablettes */
-@media (min-width : 376px) and (max-width: 850px){
-    .productList {
-        grid-column: span 3;
-    }
-    .products__container {
-        display: grid;
-        grid-template-columns: 1fr;
-        
-    }
+@media(min-width: 180px) and (max-width: 550px) {
+  .product_container{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
-
-@media screen and (min-width: 550px) {
-    .productList {
-        grid-column: span 3;
-    }
-    .products__container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        
-    }
+@media(min-width: 551px) and (max-width: 699px){
+  .product_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
-@media screen and (min-width: 700px) {
-    .productList {
-        grid-column: span 3;
-    }
-    .products__container {
-        display: grid;
-        grid-template-columns: 1fr 1fr ;  
-    }
+@media  (min-width: 700px) and (max-width:  799px){
+ .product_container{
+  display: grid;
+  grid-template-columns: repeat(3,  1fr);
+  margin: 3px;
+ }
 }
-@media (min-width: 950px) {
-    .productList {
-        grid-column: span 3;
-    }
-    .products__container {
-        display: grid;
-        grid-template-columns: 1fr  1fr 1fr;  
-    }
+@media (min-width: 800px) and (max-width: 999px){
+     .product_container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-left: -20px;
+      margin-right: auto;
+   
+  }
 }
-@media screen and (max-width: 120px) {
-    .productList {
-        grid-column: span 3;
-    }
-    .products__container {
-        display: grid;
-        grid-template-columns: 1fr;   
-    }
+@media (min-width: 1000px) and (max-width: 1999px){
+  .product_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
 }
 </style>
+`

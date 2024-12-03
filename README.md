@@ -1,6 +1,6 @@
 # Frontend Mentor - Product list with cart solution
 
-This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -16,6 +16,7 @@ This is a solution to the [Product list with cart challenge on Frontend Mentor](
     - [What I learned](#what-i-learned)
   - [Author](#author)
   - [Acknowledgments](#acknowledgments)
+  - [Feedback](#feedback)
 
 ## Overview
 
@@ -40,6 +41,7 @@ Users should be able to:
 - Live Site URL: [https://timex29.github.io/Product-list-with-cart](https://timex29.github.io/Product-list-with-cart/)
 
 ## My process
+
 # Vue 3 + Vite
 
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
@@ -56,17 +58,26 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 
 ### What I learned
 
-Thanks a lot to frontendmentor, I learned more how to design(Desktop, Tabletes, Mobiles) using css with Vuejs the progressive framework, and some basics syntax of json server like how to put, and get files, update, delete, and edit.  
+Thanks a lot to frontendmentor, I learned more how to design(Desktop, Tabletes, Mobiles) using css with Vuejs the progressive framework, and some basics syntax of json server like how to put, and get files, update, delete, and edit.
 
 ## Author
-
+  - **Cornelio**
 - **Frontend Mentor:** [@Timex29](https://www.frontendmentor.io/profile/Timex29)
 - **Twitter:** [@LlagasCornelio](https://x.com/LlagasCornelio)
-- **Mail:** [jun23.llagas@gmail.com](https://mail.google.com/)
 - **Linkedin:** [Cornelio(Timex)LLagas](https://www.linkedin.com/in/cornelio-llagas-42529b186/)
 
 ## Acknowledgments
-I would like to thank all the junior and senior developers who have helped me to overcome this challenge, and now I know how to build my own especially [frontendmentor](https://www.frontendmentor.io) giving me this opportunity to enhance my skills.
+
+I would like to thank you so much [Frontend Mentor](https://www.frontendmentor.io) to giving me this challenge to expand my skills. 
+
+## Feedback
+
+We value your feedback to make this project better! 
+
+- If you encounter any issues, please [open an issue](https://github.com/Timex29/Product-list-with-cart/issues).
+- Got suggestions? Start a discussion [here](https://github.com/Timex29/Product-list-with-cart/discussions).
+- Feel free to reach out directly at [jun23.llagas@gmail.com](https://mail.google.com/).
+
+Your input is greatly appreciated!
 
 **Have fun building!** 🚀
-

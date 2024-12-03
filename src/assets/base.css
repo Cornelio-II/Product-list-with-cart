@@ -1,15 +1,7 @@
-/* The `@import` rule in CSS is used to import a style sheet into another style sheet. In this specific
-case, the `@import
-url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');`
-line is importing a Google Fonts stylesheet for the "Red Hat Text" font family with specific
-variations and weights. */
+
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 
-/* The `:root` selector in CSS is used to define global CSS variables that can be accessed and used
-throughout the stylesheet. In this specific block of code: */
 :root {
-/* The block of code you provided is defining CSS custom properties (variables) using the `--` prefix.
-Here's a breakdown of what each variable is doing: */
 --red: hsl(14, 86%, 42%);
 --green: hsl(159, 69%, 38%);
 
@@ -28,76 +20,39 @@ Here's a breakdown of what each variable is doing: */
  --bg-size: 100% 100%;
 }
 
-/* The CSS code snippet you provided is defining a CSS class called `.bold` with a specific style rule.
-The rule `font-weight: var(--weight-bold);` is setting the font weight property of elements with the
-`.bold` class to the value of the CSS custom property `--weight-bold`. */
 
-.bold {
-    font-weight: var(--weight-bold);
-}
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* Remove default margin */
-/* This CSS code snippet is setting the margin property to 0 for the following HTML elements: `body`,
-`h1`, `h2`, `h3`, `h4`, `p`, `figure`, `blockquote`, `dl`, `dd`. */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockqoute,
-dl,
-dd {
-    margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list']{
-    list-style: none;
-}
-
-/* Set core root defaults */
 html:focus-within {
     scroll-behavior: smooth;
      
 }
+html,
+body{
+  max-width: 100vw;   
+}
 
-/* Set core body defaults */
-/* The CSS code block for `body` is defining styles for the `body` element in an HTML document. Here's
-a breakdown of what each property is doing: */
 body {
-    min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     font-size: var
     (--font-size-product-names);
     font-family: var(--ff-redhat);
     background-color: var(--rose-50);
+    //cursor: default;
+    //overflow-x: hidden;
 }
 
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
 img,
 picture {
     max-width: 100%;
     display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,

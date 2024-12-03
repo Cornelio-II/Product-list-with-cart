@@ -1,32 +1,35 @@
 @import './base.css';
 
-#app {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-weight: normal;
-    display: grid;
-    grid-template-columns: 1fr;
-  
 
-}
-
-@media (min-width:375px){
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 25px;
-  }
-}
 .attribution {
-        font-size: 20px;
-        text-align: center;
-        margin-bottom: 25px;
+  font-size: 20px;
+  text-align: center;
+  margin:  0 auto;
+  font-family: var(--ff-redhat);
 }
 .attribution a {
-        color: hsl(243, 82%, 46%);
+  color: hsl(243, 82%, 46%);
 }
-     
 
+#app{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 25px;
+  margin-left: 10px;
+  justify-content: space-between;
+  place-items: center;
+  padding: 20px;
+}
 
-   
+@media(min-width: 180px) and (max-width: 550px) {
+  #app {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+@media(min-width: 551px) and (max-width: 699px){
+  #app{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

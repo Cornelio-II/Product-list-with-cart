@@ -1,166 +1,222 @@
-<template>
-  <div class="product">
-    <div class="product__header">
-      <picture id="element"
-        class="product__header-img"
-        :class="isSelected ? 'selected' : null"
-        :onclick="toogleSelectedProduct">
-        <source
-          :srcset="resolveUrl(product.image.desktop)"
-          media="(min-width: 1200px)"/>
-        <source
-          :srcset="resolveUrl(product.image.tablet)"
-          media="(min-width: 768px)"/>
-        <source
-          :srcset="resolveUrl(product.image.mobile)"
-          media="(min-width: 480px)"/>
-        <img :src="resolveUrl(product.image.mobile)" :alt="product.name"/>
-      </picture>
-      <button aria-label="add-to-cart-btn"
-        v-if="!isSelected"
-        class="product__header-btn"
-        :onclick="handleClick">
-        <img :src="cartIcon" alt="" />Add To Cart
-      </button>
-      <button v-else class="product__header-btn  orange">
-        <img alt="decrementIcon":src="decrementIcon" :onclick="handleUpdate" class="img-icon"/>{{
-          checkQuantity(product)
-        }}
-        <img alt="incrementIcon" :src="incrementIcon" :onclick="handleClick" class="img-icon"/>
-      </button>
-    </div>
-    <div class="product__infos">
-      <p class="product__infos-category"><h3>{{ product.category }}</h3></p>
-      <p class="product__infos-name"><h3>{{ product.name }}</h3></p>
-      <p class="product__infos-price"><h3>${{ product.price }}</h3></p>
-    </div>
-  </div>
-</template>
-
 <script setup>
-import cartIcon from "../assets/images/icon-add-to-cart.svg";
-import incrementIcon from "@/assets/images/icon-increment-quantity.svg";
-import decrementIcon from "@/assets/images/icon-decrement-quantity.svg";
-import { ref } from "vue";
+import cartIcon from '../assets/images/icon-add-to-cart.svg'
+import incrementIcon from '@/assets/images/icon-increment-quantity.svg'
+import decrementIcon from '@/assets/images/icon-decrement-quantity.svg'
+import { ref } from 'vue'
 
+// currency format
+function formatCurrency(value) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  }).format(value)
+}
 
 const resolveUrl = (relativePath) => {
-  return new URL(`../assets/images/${relativePath}`, import.meta.url).href;
-};
-const isSelected = ref(false);
+  return new URL(`../assets/images/${relativePath}`, import.meta.url).href
+}
+const isSelected = ref(false)
 const selectProduct = () => {
-  isSelected.value = true;
-};
+  isSelected.value = true
+}
 const toogleSelectedProduct = () => {
-  isSelected.value = !isSelected.value;
-};
+  isSelected.value = !isSelected.value
+}
 const { addArticle, product, updateQuantity, checkQuantity } = defineProps({
   product: {
     type: Object,
-    default: () => {},
+    default: () => {}
   },
   addArticle: Function,
   updateQuantity: Function,
-  checkQuantity: Function,
-});
+  checkQuantity: Function
+})
 
 const handleClick = () => {
-  selectProduct();
-  addArticle(product);
-};
+  selectProduct()
+  addArticle(product)
+}
 const handleUpdate = () => {
-  updateQuantity(product, "-");
-};
+  updateQuantity(product, '-')
+}
 </script>
 
+<template>
+  <div class="product">
+    <div class="product_header">
+      <picture :class="isSelected ? 'selected' : null" :onclick="toogleSelectedProduct">
+        <source
+          :srcset="resolveUrl(product.image.desktop)"
+          media="(min-width: 120px)"
+          type="image desktop/jpg"
+        />
+        <source
+          :srcset="resolveUrl(product.image.tablet)"
+          media="(max-width: 768px"
+          type="image tablet/jpg"
+        />
+        <source
+          :srcset="resolveUrl(product.image.mobile)"
+          media="(max-width: 480px)"
+          type="mobile image/jpg"
+        />
+        <img :src="resolveUrl(product.image.mobile)" :alt="product.name" />
+      </picture>
+      <button
+        aria-label="add-to-cart-btn"
+        v-if="!isSelected"
+        class="product__header-btn"
+        :onclick="handleClick"
+      >
+        <img :src="cartIcon" alt="Add to cart" />Add to Cart
+      </button>
+      <!---------show-button------------>
+      <button role="show icon button" v-else class="product__header-btn orange">
+        <img alt="decrementIcon" :src="decrementIcon" :onclick="handleUpdate" class="img-icon" />{{
+          checkQuantity(product)
+        }}
+        <img alt="incrementIcon" :src="incrementIcon" :onclick="handleClick" class="img-icon" />
+      </button>
+    </div>
+    <!---------div product-header------------>
+    <div role="infos items banner" class="product__infos">
+      <p role="category item(s) banner" class="product__infos-category">{{ product.category }}</p>
+      <p role="name of item(s) banner" class="product__infos-name">{{ product.name }}</p>
+      <p role="price of item(s) banner" class="product__infos-price">
+        {{ formatCurrency(product.price) }}
+      </p>
+    </div>
+  </div>
+  <!---------div product------------>
+</template>
 <style scoped>
 .product {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  
+  gap: 25p
 }
-
-.product__header {
+.product_header {
   position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
-}
 
-.product__header-img {
-  border-radius: 5px;
-  overflow: hidden;
+}
+ img{
+    border-radius: 10px;
+}
+div.product {
+  border-radius: 10px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
  
 }
-
-.img-icon{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: 1px solid hsl(20, 50%, 98%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  transform: scale(0.95);
+div.product:hover {
+  border: 1px solid #777;
 }
-.img-icon:hover{
-  color: hsl(14, 86%, 42%);
-  border: 1px solid hsl(14, 86%, 42%);
-}
-
-
-#element:hover{
-  box-shadow:  12px 12px 12px rgb(112, 109, 109) , -10px -10px 10px rgb(112, 109, 109);
-  ;
-}
-
 .selected {
-  outline: 2px solid rgb(229, 3, 3);
+  outline: 2px solid red;
+  border-radius: 10px;
 }
- .product__header-btn {
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 25px;
-    padding: 10px 20px;
-    border: 1px solid gray;
-    font-weight: var(--weight-bold);
-    background: white;
-    width: 80%;
-    display: flex;
-    gap: 10px;
-    
-    }
-    
+
+.product__header-btn {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 1px solid gray;
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  background: white;
+  width: 75%;
+  display: flex;
+  gap: 10px;
+}
+
 .orange {
   background: rgb(236, 70, 10);
   justify-content: space-between;
- 
-
 }
-.orange:hover {
-  box-shadow: 5px 5px 5px rgba(112, 109, 109);
-}   
 .product__infos {
-    font-size: 1.30em;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    }
-    .product__infos-price {
-    color: #eb0d0de4;
-    }
-
-.product__infos-category{
-  color: rgb(18, 211, 114);
+  padding: 20px;
 }
-@media(max-width:998px){
-  .product__header-btn {
-    font-size: 80%;
+.product__infos-category{
+  color: rgba(15, 44, 2, 0.732);
+}
+.product__infos-price{
+  color: red;
+}
+@media (min-width: 150px) and (max-width: 299px){
+  .product{
+    max-width: 90%;
+    justify-content: space-between;  
+     p {
+    font-size: .6em;
   }
-
+  .product__header-btn {
+    min-width: max-content;
+  }
+  .product__infos {
+    min-width: max-content;
+  }
+    
+  }
+}
+@media(min-width: 300px) and (max-width: 550px) {
+ .product{
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 700px) and (max-width: 799px) {
+  .product{
+    max-width: 100%;
+    margin-left: -5px;
+  }
+  p {
+    font-size: .6em;
+  }
+  .product__header-btn {
+    min-width: max-content;
+  }
+  .product__infos {
+    min-width: max-content;
+  }
+}
+@media (min-width: 800px) and (max-width: 999px){
+   p {
+    font-size: 0.75em;
+  }
+  .product__header-btn {
+    min-width: max-content;
+  }
+  .product__infos {
+    min-width: max-content;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1229px){
+   p {
+    font-size: 0.80em;
+  }
+  .product__header-btn {
+    min-width: max-content;
+  }
+  .product__infos {
+    min-width: max-content;
+  }
+}
+@media (min-width: 1300px) and (max-width: 1999px){
+   p {
+    font-size: 1em;
+  }
+  .product__header-btn {
+    min-width: max-content;
+  }
+  .product__infos {
+    min-width: max-content;
+  }
 }
 </style>
