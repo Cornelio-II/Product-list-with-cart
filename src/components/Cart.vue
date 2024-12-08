@@ -71,13 +71,11 @@ const handleConfirm = () => {
         <div class="cart-item">
           <div class="cart-item-infos">
             <p class="cart-item-name">{{ article.name }}</p>
-            <p class="quantity">
               <span class="cart-item_quantity"> {{ article.quantity }} x </span>
               <span class="item_price"> @{{ formatCurrency(article.price) }} </span> <br />
               <span class="total-price_quantity">{{
                 formatCurrency(article.quantity * article.price)
               }}</span>
-            </p>
           </div>
              <button
             aria-label="removeBtn"
@@ -109,18 +107,17 @@ const handleConfirm = () => {
 
 <style scoped>
 .cart {
-  position: relative;
-  display: flex;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
   padding: 15px 20px 30px;
   border-radius: 10px;
   justify-content: space-between;
   align-items: center;
+  height: min-content;
+  max-width: min-content;
   span {
     font-weight: var(--weight-bold);
     margin-left: 2px;
   }
- 
 }
 .cart-empty {
   display: flex;
@@ -132,6 +129,7 @@ const handleConfirm = () => {
 }
 .cart-title {
   color: rgb(216, 63, 7);
+  text-align: center;
 }
 .cart-items {
   display: flex;
@@ -140,11 +138,16 @@ const handleConfirm = () => {
   gap: 15px;
 }
 .cart-item {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.1px solid var(--rose-100);
-  padding-bottom: 10px;
+  padding-bottom: 10px 20px;
+}
+.cart-item-infos{
+  justify-content: space-between;
+  align-items: center;
 }
 .cart-item-name {
   font-weight: var(--weight-bold);
@@ -187,21 +190,11 @@ const handleConfirm = () => {
   max-width: min-content;
   margin-top: 1em;
 }
-.quantity {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  border-radius: 10px;
-}
 .total-price_quantity {
-  position: absolute;
-  left: 18vw;
-  
+  left: 8vw;
 }
 .item_price {
   color: var(--rose-500);
-  position: absolute;
   left: 7vw;
 }
 .cart-item_remove-btn {
@@ -261,67 +254,129 @@ button{
   padding: 10px 20px;
   margin-top: 20px;
 }
-@media (min-width:150px) and (max-width: 299px){
-   .cart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    top: 100%;
-    left: -6%;
-    margin-top: 20px;
+@media (min-width:150px) and (max-width: 250px){
+  .cart {
     max-width: max-content;
-    margin-right: 2%;
     font-size: small;
   }
-  .quantity {
-    justify-content: space-between;
-    align-items: center;
+  .cart-item_quantity {
+    position: relative;
+    bottom: 10px;
   }
   .total-price_quantity {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     left: 8em;
+    bottom: 11px;
   }
   .item_price {
-    left: 3.5em;
+    position: relative;
+    left: 1em;
+    bottom: 10px;
   }
   .order-total{
-    font-size: 1em;
-  
+    font-size: 1.1em;
   }
   .cart-item-name{
     font-size: small;
   }
-  
+  .cart-item_remove-btn{
+    position: relative;
+    top: -35px;
+  }
+  .carbon-nuetral-icon{
+    position: relative;
+    bottom: 10px;
+  }
+  .order_delivery-text{
+    position: relative;
+    font-size: 0.80em;
+    bottom: 10px;
+  }
+}
+@media(min-width: 251px) and (max-width: 299px) {
+  .cart {
+    max-width: max-content;
+    font-size: small;
+  }
+  .cart-item_quantity{
+   position: relative;
+   bottom: 10px;
+  }
+  .total-price_quantity {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    left: 11em;
+    bottom: 10px;
+  }
+  .item_price {
+    position: relative;
+    left: 2em;
+    bottom: 10px;
+  }
+  .order-total {
+    font-size: 1.3em;
+  }
+  .cart-item-name {
+    position: relative;
+    bottom: 10px;
+    font-size: 1em;
+  }
+  .cart-item_remove-btn {
+    position: relative;
+    bottom: 35px;
+    left: 5%;
+  }
 }
 @media (min-width: 300px) and (max-width: 550px){
   .cart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    top: 100%;
-    left: auto;
-    margin-top: 20px;
-    max-width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .quantity {
-    justify-content: space-between;
-    align-items: center;
-  }
-  .total-price_quantity {
-    left: 11em;
-  }
-  .item_price {
-    left: 5em;
-  }
-  .order_delivery {
-    margin: 0 auto;
-  }
- 
+      max-width: max-content;
+      font-size: 1em;
+    }
+    .cart-item_quantity {
+      position: relative;
+      bottom: 10px;
+    }
+    .total-price_quantity {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      left: 11em;
+      bottom: 10px;
+    }
+    .item_price {
+      position: relative;
+      left: 2em;
+      bottom: 10px;
+    }
+    .order-total {
+      font-size: 1.3em;
+    }
+    .cart-item-name {
+      position: relative;
+      bottom: 10px;
+      font-size: 1em;
+    }
+    .cart-item_remove-btn {
+      position: relative;
+      bottom: 35px;
+      left: 5%;
+    }
+    .carbon-nuetral-icon{
+      position: relative;
+      bottom: 10px;
+    }
+    .order_delivery-text{
+      position: relative;
+      bottom: 10px;
+    }
 }
-
+/* next above*/
 @media(min-width: 551px) and (max-width: 699px) {
   .cart {
     display: flex;

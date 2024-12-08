@@ -42,8 +42,6 @@ const closeModal = () => {
 </script>
 
 <template>
-  <div class="main-container">
-    <div class="productList-Cart">
       <ProductList
         :products="products"
         :cartData="cartData"
@@ -52,7 +50,7 @@ const closeModal = () => {
         :checkQuantity="checkQuantity"/>
      
       <Cart :cartData="cartData" :removeArticle="removeArticle" :showModal="showModal" />
-    </div>
+  
       <Modal
         :cartData="cartData"
         :showModal="showModal"
@@ -60,5 +58,4 @@ const closeModal = () => {
         :show="show"
         :resetQuantity="resetQuantity"/>
    
-  </div>
 </template>
