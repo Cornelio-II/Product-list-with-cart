@@ -150,8 +150,9 @@ div.product:hover {
 }
 @media (min-width: 150px) and (max-width: 299px){
   .product{
-    max-width: 90%;
-    justify-content: space-between;  
+    max-width: max-content;
+    justify-content: space-between; 
+    place-content: center; 
      p {
     font-size: .6em;
   }
@@ -166,18 +167,15 @@ div.product:hover {
 }
 @media(min-width: 300px) and (max-width: 550px) {
  .product{
-    min-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  max-width: max-content;
   }
 }
-@media (min-width: 700px) and (max-width: 799px) {
+@media (min-width: 700px)  {
   .product{
-    max-width: 100%;
-    margin-left: -5px;
+    max-width: max-content;
   }
   p {
-    font-size: .6em;
+    font-size: 0.80em;
   }
   .product__header-btn {
     min-width: max-content;
@@ -186,7 +184,7 @@ div.product:hover {
     min-width: max-content;
   }
 }
-@media (min-width: 800px) and (max-width: 999px){
+@media (min-width: 850px){
    p {
     font-size: 0.75em;
   }
@@ -197,24 +195,14 @@ div.product:hover {
     min-width: max-content;
   }
 }
-@media (min-width: 1000px) and (max-width: 1229px){
-   p {
-    font-size: 0.80em;
-  }
-  .product__header-btn {
-    min-width: max-content;
-  }
-  .product__infos {
-    min-width: max-content;
-  }
-}
-@media (min-width: 1300px) and (max-width: 1999px){
-   p {
+@media (min-width: 1020px) {
+  p {
     font-size: 1em;
   }
   .product__header-btn {
     min-width: max-content;
   }
+
   .product__infos {
     min-width: max-content;
   }
