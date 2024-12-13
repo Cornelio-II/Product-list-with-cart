@@ -32,6 +32,7 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 - It's a responsive design from smallest to larger screen size based of the user(s) needs.
 
+
 ### Screenshot
 
 ![](./design/active-states.jpg)
