@@ -123,9 +123,11 @@ const totalPrice = computed(() => {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+   
   }
   /* Modal content */
  .modal {
+  margin-left: 2em;
   background-color: white;
   border-radius: 8px;
   padding: 20px;
