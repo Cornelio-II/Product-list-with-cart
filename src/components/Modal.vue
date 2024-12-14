@@ -127,7 +127,7 @@ const totalPrice = computed(() => {
   }
   /* Modal content */
  .modal {
-  margin-left: 2em;
+  margin-left: 1.6em;
   background-color: white;
   border-radius: 8px;
   padding: 20px;
