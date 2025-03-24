@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/Timex29/Product-list-with-cart](https://github.com/Timex29/Product-list-with-cart)
-- Live Site URL: [https://timex29.github.io/Product-list-with-cart](https://timex29.github.io/Product-list-with-cart/)
+- Solution URL: [https://github.com/Timex29/Product-list-with-cart](https://github.com/Cornelio-II/Product-list-with-cart)
+- Live Site URL: [https://timex29.github.io/Product-list-with-cart](https://Cornelio-II.github.io/Product-list-with-cart/)
 
 ## My process
 
